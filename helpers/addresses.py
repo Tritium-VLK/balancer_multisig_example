@@ -16,6 +16,11 @@ ADDRESSES_ETH = {
         "veBAL": "0xC128a9954e6c874eA3d62ce62B468bA073093F25",
         "minter": "0x239e55F427D44C3cc793f49bFB507ebe76638a2b",
         "gauge_controller": "0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD",
+        "authorizer_adapter": "0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75",
+        "multisigs": {
+            "lm": "0xc38c5f97B34E175FFd35407fc91a937300E33860",
+            "dao": "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+        }
     },
     "tokens": {
         "FARM": "0xa0246c9032bC3A600820415aE600c6388619A14D",
