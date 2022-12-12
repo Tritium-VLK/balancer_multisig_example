@@ -28,5 +28,5 @@ def main():
     for name, address in gauges_to_remove.items():
         gauge=safe.contract(address)
         print(f"isKilled on gauge {name} at {address}  = {gauge.is_killed()}")
-    safe.post_safe_tx(call_trace=True)
+    safe.post_safe_tx(call_trace=True, gen_tenderly=False)
 
