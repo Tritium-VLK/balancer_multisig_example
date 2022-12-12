@@ -12,6 +12,8 @@ gauges_to_remove = {
     "ARBI: Balancer 20WETH-80CRE8R RewardGauge Deposit":   "0x077794c30AFECcdF5ad2Abc0588E8CEE7197b71a",
     "POLY: Balancer TELX-60TEL-20BAL-20USDC RewardGauge Deposit":   "0x7C56371077fa0dD8327E5C53Ee26a37D14b671ad",
     "POLY: Balancer TELX-50TEL-50BAL RewardGauge Deposit":   "0xe0779Dc81B5DF4D421044f7f7227f7e2F5b0F0cC",
+    ## The one below is already disabled and is a test
+    "ARBI: Balancer 80MAGIC-20WETH RewardGauge Deposit": "0x785F08fB77ec934c01736E30546f87B4daccBe50",
 }
 
 def main():
@@ -21,12 +23,13 @@ def main():
 
     for name, address in gauges_to_remove.items():
         gauge = safe.contract(address)
-        print(f"isKilled on gauge {name} at {address}  = {gauge.is_killed()}")
+        print(f"isKilled on gauge {name} at {gauge.address}  = {gauge.is_killed()}")
     for name, address in gauges_to_remove.items():
         print (f"Killing {address} with name ${name}")
         authorizer.performAction(address, killGauge)
     for name, address in gauges_to_remove.items():
         gauge=safe.contract(address)
-        print(f"isKilled on gauge {name} at {address}  = {gauge.is_killed()}")
+        print(f"isKilled on gauge {name} at {gauge.address}  = {gauge.is_killed()}")
+
     safe.post_safe_tx(call_trace=True, gen_tenderly=False)
 
